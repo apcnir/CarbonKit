@@ -35,6 +35,10 @@
     CGPoint previewsOffset;
 }
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    return NO;
+}
+
 - (void)insertIntoRootViewController:(UIViewController *)rootViewController {
     [self willMoveToParentViewController:rootViewController];
     [rootViewController addChildViewController:self];
