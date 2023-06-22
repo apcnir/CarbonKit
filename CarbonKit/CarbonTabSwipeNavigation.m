@@ -464,7 +464,15 @@
         if ([subView isKindOfClass:[UIScrollView class]]) {
             self.pagesScrollView = subView;
             self.pagesScrollView.delegate = self;
-            self.pagesScrollView.panGestureRecognizer.maximumNumberOfTouches = 1;
+            //self.pagesScrollView.panGestureRecognizer.maximumNumberOfTouches = 1;
+
+            // Iterate through the gesture recognizers of the UIScrollView
+            for (UIGestureRecognizer *gestureRecognizer in self.pagesScrollView.gestureRecognizers) {
+                if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+                    // Remove the pan gesture recognizer from the UIScrollView
+                    [self.pagesScrollView removeGestureRecognizer:gestureRecognizer];
+                }
+            }
         }
     }
 
