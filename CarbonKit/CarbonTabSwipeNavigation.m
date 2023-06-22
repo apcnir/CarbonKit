@@ -185,7 +185,7 @@
     self.pageViewController.view.userInteractionEnabled = NO;
 
     id animateCompletionBlock = ^(BOOL finished) {
-        isSwipeLocked = NO;
+        isSwipeLocked = YES;
         selectedIndex = index;
         self.carbonSegmentedControl.userInteractionEnabled = YES;
         self.pageViewController.view.userInteractionEnabled = YES;
